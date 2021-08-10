@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 1</title>
+</head>
+
+<body>
+    <script>
+        function FunctionConstructor(value) {
+
+            //свойство экземпляра
+            this.value = value;
+
+            //метод экземпляра
+            this.printValue = function () {
+
+                document.write("Here is your value: " + this.value + "<br />");
+
+            }
+        }
+
+        //свойство функции-конструктора
+        FunctionConstructor.valueStatic = 100;
+
+        //метод функции-конструктора
+        FunctionConstructor.printValueStatic = function () {
+            document.write("Here is your static value: " + FunctionConstructor.valueStatic + "<br />");
+            //использовать this здесь нельзя !!!
+        }
+
+        //создаём объект и вызываем функцию объекта
+        let obj1 = new FunctionConstructor(17);
+        obj1.printValue();
+
+        //смотрим метод функции-конструктора
+        FunctionConstructor.printValueStatic();
+
+    </script>
+</body>
+
+</html>
