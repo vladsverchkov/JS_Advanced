@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 2</title>
+</head>
+
+<body>
+
+    <script>
+        // Разработайте функцию-конструктор, которая будет создавать объект Human (человек). 
+        // Создайте массив объектов и реализуйте функцию, которая будет сортировать элементы массива
+        // по значению свойства Age по возрастанию или по убыванию.
+
+        function Human(name, age) {
+            this.name = name;
+            this.age = age;
+        }
+
+        //переопределение метода toString()
+        Human.prototype.toString = function () {
+            return "Name: " + this.name + "; Age: " + this.age;
+        }
+
+        let humanArray = [
+            new Human("Ben", 10),
+            new Human("Jeff", 43),
+            new Human("Randy", 39),
+            new Human("Kenneth", 21),
+            new Human("Brad", 55),
+            new Human("Arthur", 30)
+        ];
+
+        for (let i = 0; i < humanArray.length; i++) {
+            document.write(humanArray[i] + "<br />");
+        }
+
+        humanArray.sort(function (firstObj, secondObj) {
+            let a = firstObj.age;
+            let b = secondObj.age;
+
+            if (a > b) {
+                return 1;
+            }
+            else if (a < b) {
+                return -1;
+            }
+            else {
+                return 0;
+            }
+        });
+
+        document.write("***********" + "<br />")
+        for (let i = 0; i < humanArray.length; i++) {
+            document.write(humanArray[i] + "<br />");
+        }
+
+        let arr = [2, 1, 4, 0, 3];
+
+        console.log(arr.sort());
+
+
+    </script>
+</body>
+
+</html>
