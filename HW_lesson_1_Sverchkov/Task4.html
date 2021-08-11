@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 4</title>
+</head>
+<body>
+    <script>
+        //Создайте пример, демонстрирующий назначение метода toString().
+
+        function Car(model, color, owner) {
+            this.model = model;
+            this.color = color;
+            this.owner = owner;
+        }
+
+        Car.prototype.toString = function() {
+            return "Car model: " + this.model + ". Color: " + this.color + ". Owner: " + this.owner + "<br/>";
+        }
+
+        let car1 = new Car("Mitsubishi", "Red", "John Watson");
+        document.write(car1 + "<br/>"); // если бы не переопределение, мы бы получили здесь [object Object]
+
+    </script>
+    
+</body>
+</html>
