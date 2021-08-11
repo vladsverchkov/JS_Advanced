@@ -23,6 +23,11 @@
             }
         }
 
+        // метод экземпляра ещё можно задать через прототип — так корректнее с точки зрения экономии памяти
+        FunctionConstructor.prototype.printValueSquare = function() {
+            document.write("Here is your square value: " + this.value * this.value + "<br />");
+        }
+
         //свойство функции-конструктора
         FunctionConstructor.valueStatic = 100;
 
@@ -35,6 +40,7 @@
         //создаём объект и вызываем функцию объекта
         let obj1 = new FunctionConstructor(17);
         obj1.printValue();
+        obj1.printValueSquare();
 
         //смотрим метод функции-конструктора
         FunctionConstructor.printValueStatic();
