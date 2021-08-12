@@ -1,15 +1,64 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Task 1</title>
 </head>
+
 <body>
     <script>
-        
+        class Human {
+
+            constructor(name, age) {
+                this.Name = name;
+                this.Age = age;
+            }
+
+
+        }
+
+        Human.prototype.toString = function () {
+            return "Name: " + this.Name + "; Age: " + this.Age;
+        }
+
+        let array = [
+
+            new Human("Andrew", 25),
+            new Human("Viktoria", 20),
+            new Human("Stepan", 13),
+            new Human("Eugene", 37),
+            new Human("Daniel", 28),
+            new Human("Bryan", 45)
+
+        ];
+
+        array.sort(function (firstObj, secondObj) {
+            let a = firstObj.Age;
+            let b = secondObj.Age;
+
+            if (a > b) {
+                return 1;
+            }
+            else if (a < b) {
+                return -1;
+            }
+            else {
+                return 0;
+            }
+        }
+
+        );
+
+        document.write("***********" + "<br />")
+        for (let i = 0; i < array.length; i++) {
+            document.write(array[i] + "<br />");
+        }
+
     </script>
-    
+
 </body>
+
 </html>
