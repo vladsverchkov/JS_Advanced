@@ -12,6 +12,40 @@
         // Width (ширина), Depth (глубина) и Material (материал). Также, в объекте должны быть методы
         // Volume – для получения объема и equals() – для сравнения объектов, объекты должны считаться равными,
         // если содержат одинаковые значения в свойстве Material.
+
+        function Box(height, width, depth, material) {
+            this.Height = height;
+            this.Width = width;
+            this.Depth = depth;
+            this.Material = material;
+        }
+
+        Box.prototype.Volume = function() {
+            return this.Depth * this.Height * this.Width;
+        }
+
+        Box.prototype.equal = function(obj) {
+
+            if (this.Material == obj.Material) {
+                return "Objects are equal!";
+            }
+            else {
+                return "Objects are NOT equal!";
+            }
+
+        }
+
+        obj1 = new Box (12, 13, 15, "Leather");
+        obj2 = new Box (2, 3, 5, "Leathwer");
+
+        document.write("Volumne of first box is " + obj1.Volume());
+        document.write("<br/>");
+
+        document.write("Volumne of second box is " + obj2.Volume());
+        document.write("<br/>");
+
+        document.write(obj1.equal(obj2));
+
     </script>
 </body>
 </html>
